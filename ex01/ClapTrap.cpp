@@ -3,18 +3,14 @@
 ClapTrap::ClapTrap()
 {
 	std::cout << "Default constructor called" << std::endl;
-	Name = "";
+	Name = "????";
 	Attack_points = 0;
 	Energy_points = 10;
 	Hit_points = 10;
 }
 
-ClapTrap::ClapTrap(std::string name)
+ClapTrap::ClapTrap(const std::string& name) : Name(name), Hit_points(10), Energy_points(10), Attack_points(0)
 {
-	Name = name;
-	Attack_points = 0;
-	Energy_points = 10;
-	Hit_points = 10;
 	std::cout << "Parameterized constructor called" << std::endl;
 }
 
@@ -56,6 +52,7 @@ void ClapTrap::attack(const std::string& target)
         std::cout << Name << " has no energy points left and cannot attack." << std::endl;
         return;
     }
+
     std::cout << "ClapTrap " << Name << " attacks " << target
               << ", causing " << Attack_points << " points of damage!" << std::endl;
     Energy_points--;
@@ -88,6 +85,7 @@ void ClapTrap::beRepaired(unsigned int amount)
         std::cout << Name << " has no energy points left and cannot repair." << std::endl;
         return;
     }
+
     Hit_points += amount;
     Energy_points--;
     std::cout << Name << " repairs itself, gaining " << amount << " hit points!" << std::endl;

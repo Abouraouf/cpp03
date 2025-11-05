@@ -9,12 +9,8 @@ ClapTrap::ClapTrap()
 	Hit_points = 10;
 }
 
-ClapTrap::ClapTrap(std::string name)
+ClapTrap::ClapTrap(const std::string& name) : Name(name), Hit_points(10), Energy_points(10), Attack_points(0)
 {
-	Name = name;
-	Attack_points = 0;
-	Energy_points = 10;
-	Hit_points = 10;
 	std::cout << "Parameterized constructor called" << std::endl;
 }
 

@@ -9,7 +9,7 @@ class ScavTrap : public ClapTrap{
 	public:
 	ScavTrap();
 	ScavTrap(const ScavTrap& other);
-	ScavTrap(std::string Name);
+	ScavTrap(const std::string& Name);
 	~ScavTrap();
 	
 	ScavTrap& operator=(const ScavTrap& other);
