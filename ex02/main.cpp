@@ -5,21 +5,21 @@
 int main()
 {
     std::cout << "\n=== CLAPTRAP TEST ===" << std::endl;
-    ClapTrap clap("CL4P-TP");
-    clap.attack("Bandit");
+    ClapTrap clap("CLAP");
+    clap.attack("enemy");
     clap.takeDamage(5);
     clap.beRepaired(3);
 
     std::cout << "\n=== SCAVTRAP TEST ===" << std::endl;
-    ScavTrap scav("SC4V-TP");
-    scav.attack("Hyperion");
+    ScavTrap scav("SCAV");
+    scav.attack("enemy1");
     scav.takeDamage(90);
     scav.beRepaired(50);
     scav.guardGate();
 
     std::cout << "\n=== FRAGTRAP TEST ===" << std::endl;
-    FragTrap frag("FR4G-TP");
-    frag.attack("Skrillex");
+    FragTrap frag("FRAG");
+    frag.attack("enemy");
     frag.takeDamage(70);
     frag.beRepaired(40);
     frag.highFivesGuys();
