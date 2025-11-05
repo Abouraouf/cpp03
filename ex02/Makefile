@@ -1,0 +1,21 @@
+NAME =  program
+SOURCES = ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp
+FLAGS = -Wall -Wextra -Werror -std=c++98
+OBJ = $(SOURCES:.cpp=.o)
+HEADER = ClapTrap.hpp ScavTrap.cpp FragTrap.hpp
+
+%.o: %.cpp $(HEADER)
+	g++ $(FLAGS) -c $< -o $@
+
+$(NAME): $(OBJ) 
+	g++ $(FLAGS) $(OBJ) -o $(NAME)
+
+all: $(NAME)
+
+clean:
+	rm -f $(OBJ)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all

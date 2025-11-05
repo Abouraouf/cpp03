@@ -1,11 +1,11 @@
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-ScavTrap::ScavTrap()
+FragTrap::FragTrap()
 {
 	std::cout << "Default constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	this->Attack_points = 20;
 	this->Energy_points = 50;
@@ -14,13 +14,15 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	std::cout << "Parameterized constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other) // get back later
+FragTrap::FragTrap(const FragTrap
+& other) : ClapTrap(other)
 {
 	std::cout << "copy constructor called" << std::endl;
 	*this = other;
 }
 
-ScavTrap& ScavTrap::operator=(const ScavTrap& other)
+FragTrap& FragTrap::operator=(const FragTrap
+& other)
 {
 	if (this != &other)
 	{
@@ -33,14 +35,14 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 	return (*this);
 }
 
-ScavTrap::~ScavTrap()
+FragTrap::~FragTrap()
 {
 	std::cout << "Destructor called" << std::endl;
 }
 
 // actions in here 
 
-void ScavTrap::attack(const std::string& target)
+void FragTrap::attack(const std::string& target)
 {
     if (Hit_points == 0)
     {
@@ -52,12 +54,12 @@ void ScavTrap::attack(const std::string& target)
         std::cout << Name << " has no energy points left and cannot attack." << std::endl;
         return;
     }
-    std::cout << "ScavTrap " << Name << " attacks " << target
+    std::cout << "FragTrap" << Name << " attacks " << target
               << ", causing " << Attack_points << " points of damage!" << std::endl;
     Energy_points--;
 }
 
-void ScavTrap::takeDamage(unsigned int amount)
+void FragTrap::takeDamage(unsigned int amount)
 {
     if (Hit_points == 0)
     {
@@ -72,7 +74,7 @@ void ScavTrap::takeDamage(unsigned int amount)
         Hit_points -= amount;
 }
 
-void ScavTrap::beRepaired(unsigned int amount)
+void FragTrap::beRepaired(unsigned int amount)
 {
     if (Hit_points == 0)
     {
@@ -89,8 +91,7 @@ void ScavTrap::beRepaired(unsigned int amount)
     std::cout << Name << " repairs itself, gaining " << amount << " hit points!" << std::endl;
 }
 
-void ScavTrap::guardGate()
+void FragTrap::highFivesGuys(void)
 {
-	std::cout << "t ScavTrap is now in Gate keeper mode." << std::endl;
-	gate = 1;
+    std::cout << "FragTrap " << Name << " requests a positive high five!" << std::endl;
 }

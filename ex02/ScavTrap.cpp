@@ -14,7 +14,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	std::cout << "Parameterized constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other) // get back later
+ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
 {
 	std::cout << "copy constructor called" << std::endl;
 	*this = other;
